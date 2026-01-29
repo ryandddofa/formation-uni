@@ -12,19 +12,25 @@ import ModeIndicator from '@/components/ModeIndicator.vue'
 import ModeNavArrow from '@/components/ModeNavArrow.vue'
 import { useSessionStore } from '@/stores/sessionStore.js'
 import { useTecfeeStore } from '@/stores/tecfeeStore.js'
+import FormationHomeScreen from '@/components/FormationHomeScreen.vue'
+import FormationExerciseScreen from '@/components/FormationExerciseScreen.vue'
+import FormationSummary from '@/components/FormationSummary.vue'
+import { useFormationStore } from '@/stores/formationStore.js'
 
 const { initTheme } = useTheme()
 const sessionStore = useSessionStore()
 const tecfeeStore = useTecfeeStore()
+const formationStore = useFormationStore()
 
 const currentScreen = ref('home')
-const currentMode = ref('classic') // 'classic' ou 'tecfee'
+const currentMode = ref('classic') // 'classic', 'tecfee' ou 'formation'
 
 // GESTION DU RETOUR ARRIÈRE
 function handlePopState() {
   currentScreen.value = 'home'
   sessionStore.endSession()
   tecfeeStore.endSession()
+  formationStore.endSession()
   window.history.pushState({ screen: 'home', mode: currentMode.value }, '', '/')
 }
 
@@ -88,6 +94,27 @@ function handleTecfeeRetryFailed() {
   window.history.pushState({ screen: 'exercise', mode: 'tecfee' }, '', '/')
 }
 
+// ============================================
+// HANDLERS FORMATION
+// ============================================
+
+function handleFormationStartSession(exercises) {
+  formationStore.startSession(exercises)
+  currentScreen.value = 'exercise'
+  window.history.pushState({ screen: 'exercise', mode: 'formation' }, '', '/')
+}
+
+function handleFormationSessionComplete() {
+  currentScreen.value = 'summary'
+  window.history.pushState({ screen: 'summary', mode: 'formation' }, '', '/')
+}
+
+function handleFormationRetryFailed(failedExercises) {
+  formationStore.startRetrySession(failedExercises)
+  currentScreen.value = 'exercise'
+  window.history.pushState({ screen: 'exercise', mode: 'formation' }, '', '/')
+}
+
 onMounted(() => {
   initTheme()
   window.addEventListener('popstate', handlePopState)
@@ -109,36 +136,54 @@ onUnmounted(() => {
       @change-mode="changeMode"
     />
     
-    <!-- Home screens avec navigation -->
-    <div v-if="currentScreen === 'home'" class="home-wrapper">
-      <!-- Flèche gauche (vers classique) -->
-      <ModeNavArrow 
-        v-if="currentMode === 'tecfee'"
-        direction="left"
-        label="Classique"
-        @click="changeMode('classic')"
-      />
-      
-      <!-- Home classique -->
-      <HomeScreen 
-        v-if="currentMode === 'classic'"
-        @start-session="handleStartSession"
-      />
-      
-      <!-- Home TECFÉE -->
-      <HomeScreenTecfee
-        v-else-if="currentMode === 'tecfee'"
-        @start-session="handleTecfeeStartSession"
-      />
-      
-      <!-- Flèche droite (vers TECFÉE) -->
-      <ModeNavArrow 
-        v-if="currentMode === 'classic'"
-        direction="right"
-        label="TECFÉE"
-        @click="changeMode('tecfee')"
-      />
-    </div>
+<!-- Home screens avec navigation -->
+<div v-if="currentScreen === 'home'" class="home-wrapper">
+  <!-- Flèche gauche -->
+  <ModeNavArrow 
+    v-if="currentMode === 'tecfee'"
+    direction="left"
+    label="Classique"
+    @click="changeMode('classic')"
+  />
+  <ModeNavArrow 
+    v-if="currentMode === 'formation'"
+    direction="left"
+    label="TECFÉE"
+    @click="changeMode('tecfee')"
+  />
+  
+  <!-- Home classique -->
+  <HomeScreen 
+    v-if="currentMode === 'classic'"
+    @start-session="handleStartSession"
+  />
+  
+  <!-- Home TECFÉE -->
+  <HomeScreenTecfee
+    v-else-if="currentMode === 'tecfee'"
+    @start-session="handleTecfeeStartSession"
+  />
+  
+  <!-- Home FORMATION -->
+  <FormationHomeScreen
+    v-else-if="currentMode === 'formation'"
+    @start-session="handleFormationStartSession"
+  />
+  
+  <!-- Flèche droite -->
+  <ModeNavArrow 
+    v-if="currentMode === 'classic'"
+    direction="right"
+    label="TECFÉE"
+    @click="changeMode('tecfee')"
+  />
+  <ModeNavArrow 
+    v-if="currentMode === 'tecfee'"
+    direction="right"
+    label="Formation"
+    @click="changeMode('formation')"
+  />
+</div>
     
     <!-- Exercise screens -->
     <ExerciseScreen
@@ -152,6 +197,12 @@ onUnmounted(() => {
       @session-complete="handleTecfeeSessionComplete"
       @quit-session="handleQuitSession"
     />
+
+    <FormationExerciseScreen
+  v-else-if="currentScreen === 'exercise' && currentMode === 'formation'"
+  @session-complete="handleFormationSessionComplete"
+  @quit-session="handleQuitSession"
+/>
     
     <!-- Summary screens -->
     <SessionSummary
@@ -165,6 +216,12 @@ onUnmounted(() => {
       @new-session="handleNewSession"
       @retry-failed="handleTecfeeRetryFailed"
     />
+
+    <FormationSummary
+  v-else-if="currentScreen === 'summary' && currentMode === 'formation'"
+  @new-session="handleNewSession"
+  @retry-failed="handleFormationRetryFailed"
+/>
   </div>
   <p class="footer">Fait par <a class="footerlink" href="https://ryandufault.com" target="_blank">Ryan Dufault</a>.</p>
 </template>

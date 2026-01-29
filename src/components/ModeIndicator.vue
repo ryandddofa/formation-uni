@@ -2,7 +2,7 @@
 defineProps({
   currentMode: {
     type: String,
-    default: 'classic' // 'classic' ou 'tecfee'
+    default: 'classic' // 'classic', 'tecfee' ou 'formation'
   }
 })
 
@@ -22,6 +22,12 @@ const emit = defineEmits(['change-mode'])
       :class="{ active: currentMode === 'tecfee' }"
       @click="emit('change-mode', 'tecfee')"
       title="Mode TECFÉE"
+    ></span>
+    <span 
+      class="dot" 
+      :class="{ active: currentMode === 'formation' }"
+      @click="emit('change-mode', 'formation')"
+      title="Mode Formation"
     ></span>
   </div>
 </template>
