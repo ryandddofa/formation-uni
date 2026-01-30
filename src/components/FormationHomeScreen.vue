@@ -2,6 +2,8 @@
 import { ref, computed } from 'vue'
 import { formationCategories } from '@/data/formationCategories.js'
 import { tempsIndicatifQuestions } from '@/data/formation/temps-indicatif-questions.js'
+import { modesConjugaisonQuestions } from '@/data/formation/modes-conjugaison-questions.js'
+import { attributsQuestions } from '@/data/formation/attributs-questions.js'
 
 const emit = defineEmits(['start-session'])
 
@@ -48,6 +50,14 @@ function startSession() {
     if (categoryId === 'temps-indicatif') {
       allQuestions = allQuestions.concat(tempsIndicatifQuestions)
     }
+
+    if (categoryId === 'modes-conjugaison') {
+      allQuestions = allQuestions.concat(modesConjugaisonQuestions)
+    }
+
+    if (categoryId === 'attributs') {
+  allQuestions = allQuestions.concat(attributsQuestions)
+}
     // On ajoutera les autres catégories ici plus tard
     // if (categoryId === 'modes-conjugaison') {
     //   allQuestions = allQuestions.concat(modesConjugaisonQuestions)

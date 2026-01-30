@@ -253,5 +253,297 @@ export const tempsIndicatifQuestions = [
         sentence: 'Dès qu\'ils auront obtenu l\'autorisation nécessaire, ils pourront commencer les rénovations.',
         correctAnswer: 'futur antérieur',
         explanation: 'Condition future antérieure → futur antérieur'
+    },
+    {
+        id: 'ti-31',
+        categoryId: 'temps-indicatif',
+        categoryName: 'Les 8 temps de l\'indicatif',
+        sentence: 'Les témoins affirmaient que le véhicule roulait à vive allure au moment de l\'accident.',
+        correctAnswer: 'imparfait',
+        explanation: 'Action en cours dans le passé (contexte de témoignage) → imparfait'
+    },
+    {
+        id: 'ti-32',
+        categoryId: 'temps-indicatif',
+        categoryName: 'Les 8 temps de l\'indicatif',
+        sentence: 'Le gouvernement souhaitait réformer le système sans provoquer de contestation sociale.',
+        correctAnswer: 'imparfait',
+        explanation: 'État d\'esprit passé, intention non réalisée → imparfait'
+    },
+    {
+        id: 'ti-33',
+        categoryId: 'temps-indicatif',
+        categoryName: 'Les 8 temps de l\'indicatif',
+        sentence: 'À cette époque, les chercheurs ignoraient encore les conséquences à long terme de leurs découvertes.',
+        correctAnswer: 'imparfait',
+        explanation: 'État de connaissance passé, situation révolue → imparfait'
+    },
+    {
+        id: 'ti-34',
+        categoryId: 'temps-indicatif',
+        categoryName: 'Les 8 temps de l\'indicatif',
+        sentence: 'L\'opposition critiquait systématiquement chaque décision prise par l\'exécutif.',
+        correctAnswer: 'imparfait',
+        explanation: 'Action répétée et habituelle au passé → imparfait'
+    },
+    {
+        id: 'ti-35',
+        categoryId: 'temps-indicatif',
+        categoryName: 'Les 8 temps de l\'indicatif',
+        sentence: 'La tension montait progressivement entre les deux factions rivales.',
+        correctAnswer: 'imparfait',
+        explanation: 'Processus graduel en cours dans le passé → imparfait'
+    },
+
+    // PASSÉ SIMPLE (récits historiques, contextes formels)
+    {
+        id: 'ti-36',
+        categoryId: 'temps-indicatif',
+        categoryName: 'Les 8 temps de l\'indicatif',
+        sentence: 'La crise économique bouleversa profondément les structures sociales du pays.',
+        correctAnswer: 'passé simple',
+        explanation: 'Événement historique ponctuel → passé simple'
+    },
+    {
+        id: 'ti-37',
+        categoryId: 'temps-indicatif',
+        categoryName: 'Les 8 temps de l\'indicatif',
+        sentence: 'Les délégués parvinrent finalement à un compromis après d\'âpres négociations.',
+        correctAnswer: 'passé simple',
+        explanation: 'Action aboutie dans un récit formel → passé simple'
+    },
+    {
+        id: 'ti-38',
+        categoryId: 'temps-indicatif',
+        categoryName: 'Les 8 temps de l\'indicatif',
+        sentence: 'L\'écrivain publia son œuvre majeure quelques mois avant son décès.',
+        correctAnswer: 'passé simple',
+        explanation: 'Fait biographique dans un contexte littéraire → passé simple'
+    },
+    {
+        id: 'ti-39',
+        categoryId: 'temps-indicatif',
+        categoryName: 'Les 8 temps de l\'indicatif',
+        sentence: 'Le tribunal rendit son verdict sous les applaudissements du public.',
+        correctAnswer: 'passé simple',
+        explanation: 'Action juridique ponctuelle (style soutenu) → passé simple'
+    },
+    {
+        id: 'ti-40',
+        categoryId: 'temps-indicatif',
+        categoryName: 'Les 8 temps de l\'indicatif',
+        sentence: 'Les scientifiques découvrirent que leurs hypothèses initiales étaient erronées.',
+        correctAnswer: 'passé simple',
+        explanation: 'Découverte ponctuelle dans un récit scientifique → passé simple'
+    },
+
+    // FUTUR SIMPLE (prédictions, ordres atténués, vérités futures)
+    {
+        id: 'ti-41',
+        categoryId: 'temps-indicatif',
+        categoryName: 'Les 8 temps de l\'indicatif',
+        sentence: 'Les spécialistes prévoient que la situation se détériorera davantage.',
+        correctAnswer: 'futur simple',
+        explanation: 'Prédiction future → futur simple'
+    },
+    {
+        id: 'ti-42',
+        categoryId: 'temps-indicatif',
+        categoryName: 'Les 8 temps de l\'indicatif',
+        sentence: 'Vous veillerez à ce que toutes les procédures soient respectées.',
+        correctAnswer: 'futur simple',
+        explanation: 'Directive/ordre atténué → futur simple'
+    },
+    {
+        id: 'ti-43',
+        categoryId: 'temps-indicatif',
+        categoryName: 'Les 8 temps de l\'indicatif',
+        sentence: 'Les historiens reconnaîtront un jour l\'importance de ces événements.',
+        correctAnswer: 'futur simple',
+        explanation: 'Certitude future (prédiction) → futur simple'
+    },
+    {
+        id: 'ti-44',
+        categoryId: 'temps-indicatif',
+        categoryName: 'Les 8 temps de l\'indicatif',
+        sentence: 'Tu fourniras les justificatifs nécessaires dans les plus brefs délais.',
+        correctAnswer: 'futur simple',
+        explanation: 'Instruction formelle pour le futur → futur simple'
+    },
+    {
+        id: 'ti-45',
+        categoryId: 'temps-indicatif',
+        categoryName: 'Les 8 temps de l\'indicatif',
+        sentence: 'Les générations futures hériteront des conséquences de nos choix actuels.',
+        correctAnswer: 'futur simple',
+        explanation: 'Conséquence future inévitable → futur simple'
+    },
+
+    // PASSÉ COMPOSÉ (actions accomplies, résultats présents)
+    {
+        id: 'ti-46',
+        categoryId: 'temps-indicatif',
+        categoryName: 'Les 8 temps de l\'indicatif',
+        sentence: 'Les négociateurs ont réussi à éviter une escalade du conflit.',
+        correctAnswer: 'passé composé',
+        explanation: 'Action passée accomplie avec résultat présent → passé composé'
+    },
+    {
+        id: 'ti-47',
+        categoryId: 'temps-indicatif',
+        categoryName: 'Les 8 temps de l\'indicatif',
+        sentence: 'Le comité d\'éthique a émis de sérieuses réserves concernant ce projet.',
+        correctAnswer: 'passé composé',
+        explanation: 'Action accomplie dont les effets perdurent → passé composé'
+    },
+    {
+        id: 'ti-48',
+        categoryId: 'temps-indicatif',
+        categoryName: 'Les 8 temps de l\'indicatif',
+        sentence: 'Les autorités ont imposé des restrictions drastiques pour contenir l\'épidémie.',
+        correctAnswer: 'passé composé',
+        explanation: 'Mesure passée toujours en vigueur → passé composé'
+    },
+    {
+        id: 'ti-49',
+        categoryId: 'temps-indicatif',
+        categoryName: 'Les 8 temps de l\'indicatif',
+        sentence: 'L\'enquête a révélé des irrégularités graves dans la gestion des fonds publics.',
+        correctAnswer: 'passé composé',
+        explanation: 'Révélation passée aux conséquences présentes → passé composé'
+    },
+    {
+        id: 'ti-50',
+        categoryId: 'temps-indicatif',
+        categoryName: 'Les 8 temps de l\'indicatif',
+        sentence: 'Les syndicats ont refusé catégoriquement la proposition de l\'employeur.',
+        correctAnswer: 'passé composé',
+        explanation: 'Refus passé dont la position demeure → passé composé'
+    },
+
+    // PLUS-QUE-PARFAIT (antériorité complexe)
+    {
+        id: 'ti-51',
+        categoryId: 'temps-indicatif',
+        categoryName: 'Les 8 temps de l\'indicatif',
+        sentence: 'Les experts constatèrent que les dommages s\'étaient produits bien avant leur intervention.',
+        correctAnswer: 'plus-que-parfait',
+        explanation: 'Action antérieure à un constat passé → plus-que-parfait'
+    },
+    {
+        id: 'ti-52',
+        categoryId: 'temps-indicatif',
+        categoryName: 'Les 8 temps de l\'indicatif',
+        sentence: 'Elle réalisa qu\'elle avait négligé des éléments cruciaux dans son analyse.',
+        correctAnswer: 'plus-que-parfait',
+        explanation: 'Négligence antérieure à la prise de conscience → plus-que-parfait'
+    },
+    {
+        id: 'ti-53',
+        categoryId: 'temps-indicatif',
+        categoryName: 'Les 8 temps de l\'indicatif',
+        sentence: 'Les responsables reconnaissaient enfin les erreurs qu\'ils avaient commises.',
+        correctAnswer: 'plus-que-parfait',
+        explanation: 'Erreurs antérieures à la reconnaissance → plus-que-parfait'
+    },
+    {
+        id: 'ti-54',
+        categoryId: 'temps-indicatif',
+        categoryName: 'Les 8 temps de l\'indicatif',
+        sentence: 'Le suspect maintenait qu\'il s\'était trouvé ailleurs au moment des faits.',
+        correctAnswer: 'plus-que-parfait',
+        explanation: 'Alibi antérieur au moment de la défense → plus-que-parfait'
+    },
+    {
+        id: 'ti-55',
+        categoryId: 'temps-indicatif',
+        categoryName: 'Les 8 temps de l\'indicatif',
+        sentence: 'Les chercheurs observèrent des phénomènes que personne n\'avait documentés auparavant.',
+        correctAnswer: 'plus-que-parfait',
+        explanation: 'Absence antérieure de documentation → plus-que-parfait'
+    },
+    {
+        id: 'ti-56',
+        categoryId: 'temps-indicatif',
+        categoryName: 'Les 8 temps de l\'indicatif',
+        sentence: 'Il comprenait désormais pourquoi ses prédécesseurs avaient abandonné ce projet.',
+        correctAnswer: 'plus-que-parfait',
+        explanation: 'Abandon antérieur à la compréhension → plus-que-parfait'
+    },
+
+    // PASSÉ ANTÉRIEUR (antériorité immédiate, style littéraire)
+    {
+        id: 'ti-57',
+        categoryId: 'temps-indicatif',
+        categoryName: 'Les 8 temps de l\'indicatif',
+        sentence: 'Lorsque le président eut achevé son discours, l\'assemblée se leva pour l\'ovationner.',
+        correctAnswer: 'passé antérieur',
+        explanation: 'Action immédiatement antérieure dans un récit formel → passé antérieur'
+    },
+    {
+        id: 'ti-58',
+        categoryId: 'temps-indicatif',
+        categoryName: 'Les 8 temps de l\'indicatif',
+        sentence: 'Dès que les experts eurent examiné les documents, ils confirmèrent leur authenticité.',
+        correctAnswer: 'passé antérieur',
+        explanation: 'Examen immédiatement antérieur à la confirmation → passé antérieur'
+    },
+    {
+        id: 'ti-59',
+        categoryId: 'temps-indicatif',
+        categoryName: 'Les 8 temps de l\'indicatif',
+        sentence: 'Quand les autorités eurent pris connaissance des faits, elles ouvrirent une enquête.',
+        correctAnswer: 'passé antérieur',
+        explanation: 'Prise de connaissance antérieure dans un contexte formel → passé antérieur'
+    },
+    {
+        id: 'ti-60',
+        categoryId: 'temps-indicatif',
+        categoryName: 'Les 8 temps de l\'indicatif',
+        sentence: 'Aussitôt qu\'il eut compris l\'ampleur du problème, il convoqua une réunion d\'urgence.',
+        correctAnswer: 'passé antérieur',
+        explanation: 'Compréhension immédiatement antérieure (récit soutenu) → passé antérieur'
+    },
+
+    // FUTUR ANTÉRIEUR (antériorité future)
+    {
+        id: 'ti-61',
+        categoryId: 'temps-indicatif',
+        categoryName: 'Les 8 temps de l\'indicatif',
+        sentence: 'Quand les chercheurs auront analysé toutes les données, ils publieront leurs conclusions.',
+        correctAnswer: 'futur antérieur',
+        explanation: 'Analyse future antérieure à la publication → futur antérieur'
+    },
+    {
+        id: 'ti-62',
+        categoryId: 'temps-indicatif',
+        categoryName: 'Les 8 temps de l\'indicatif',
+        sentence: 'Vous ne pourrez voter que lorsque vous aurez atteint l\'âge de la majorité.',
+        correctAnswer: 'futur antérieur',
+        explanation: 'Condition future antérieure au droit de vote → futur antérieur'
+    },
+    {
+        id: 'ti-63',
+        categoryId: 'temps-indicatif',
+        categoryName: 'Les 8 temps de l\'indicatif',
+        sentence: 'D\'ici demain, le comité aura statué sur l\'ensemble des demandes.',
+        correctAnswer: 'futur antérieur',
+        explanation: 'Action future accomplie avant une échéance → futur antérieur'
+    },
+    {
+        id: 'ti-64',
+        categoryId: 'temps-indicatif',
+        categoryName: 'Les 8 temps de l\'indicatif',
+        sentence: 'Dès que les négociateurs auront trouvé un terrain d\'entente, ils signeront l\'accord.',
+        correctAnswer: 'futur antérieur',
+        explanation: 'Accord futur antérieur à la signature → futur antérieur'
+    },
+    {
+        id: 'ti-65',
+        categoryId: 'temps-indicatif',
+        categoryName: 'Les 8 temps de l\'indicatif',
+        sentence: 'Lorsque vous aurez vérifié l\'exactitude des informations, vous transmettrez le rapport.',
+        correctAnswer: 'futur antérieur',
+        explanation: 'Vérification future antérieure à la transmission → futur antérieur'
     }
 ]

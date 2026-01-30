@@ -2,9 +2,13 @@
 import { ref, computed } from 'vue'
 import { useFormationStore } from '@/stores/formationStore.js'
 import FormationExerciseCard from './FormationExerciseCard.vue'
+import FormationExerciseCardModes from './FormationExerciseCardModes.vue'
 import FormationFeedbackPanel from './FormationFeedbackPanel.vue'
 import SessionProgress from './SessionProgress.vue'
 import { recapitulatifTempsComposes } from '@/data/formation/recapitulatif-temps-composes.js'
+import { recapitulatifModes } from '@/data/formation/recapitulatif-modes.js'
+import FormationExerciseCardAttributs from './FormationExerciseCardAttributs.vue'
+import { recapitulatifAttributs } from '@/data/formation/recapitulatif-attributs.js'
 
 const emit = defineEmits(['session-complete', 'quit-session'])
 
@@ -21,6 +25,22 @@ const totalQuestions = computed(() => formationStore.totalQuestions)
 const currentAnswer = computed(() => formationStore.getCurrentAnswer())
 const hasAnswered = computed(() => currentAnswer.value?.userAnswer !== null)
 const isLastQuestion = computed(() => currentQuestionIndex.value === totalQuestions.value - 1)
+
+// Détermine quel composant de carte utiliser selon la catégorie
+const currentCardComponent = computed(() => {
+  const question = formationStore.currentQuestion
+  if (!question) return FormationExerciseCard
+  
+  if (question.categoryId === 'temps-indicatif') {
+    return FormationExerciseCard
+  } else if (question.categoryId === 'modes-conjugaison') {
+    return FormationExerciseCardModes
+  } else if (question.categoryId === 'attributs') {
+  return FormationExerciseCardAttributs
+  }
+  
+  return FormationExerciseCard
+})
 
 // ============================================
 // METHODS
@@ -47,6 +67,21 @@ function handleQuit() {
 function toggleRecapitulatif() {
   showRecapitulatif.value = !showRecapitulatif.value
 }
+
+function getRecapitulatif() {
+  const question = formationStore.currentQuestion
+  if (!question) return recapitulatifTempsComposes
+  
+  if (question.categoryId === 'temps-indicatif') {
+    return recapitulatifTempsComposes
+  } else if (question.categoryId === 'modes-conjugaison') {
+    return recapitulatifModes
+  } else if (question.categoryId === 'attributs') {
+  return recapitulatifAttributs
+  }
+  
+  return recapitulatifTempsComposes
+}
 </script>
 
 <template>
@@ -70,16 +105,16 @@ function toggleRecapitulatif() {
     <div v-if="showRecapitulatif" class="recapitulatif-modal" @click="toggleRecapitulatif">
       <div class="recapitulatif-content" @click.stop>
         <div class="recapitulatif-header">
-          <h3>Récapitulatif des temps composés</h3>
+          <h3>Tableau récapitulatif</h3>
           <button class="close-button" @click="toggleRecapitulatif">✕</button>
         </div>
-        <pre class="recapitulatif-table">{{ recapitulatifTempsComposes }}</pre>
+        <pre class="recapitulatif-table">{{ getRecapitulatif() }}</pre>
       </div>
     </div>
 
-    <!-- Zone centrale -->
+    <!-- Zone centrale avec composant dynamique -->
     <div class="exercise-center">
-      <FormationExerciseCard />
+      <component :is="currentCardComponent" />
       <FormationFeedbackPanel />
     </div>
 

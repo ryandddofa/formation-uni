@@ -1,6 +1,17 @@
 export const recapitulatifTempsComposes = `
-RÉCAPITULATIF DES TEMPS COMPOSÉS
+RÉCAPITULATIF DES 8 TEMPS DE L'INDICATIF
 
+TEMPS SIMPLES
+┌─────────────────────┬──────────────────────────────────────────┬──────────────────┐
+│ Temps               │ Valeur principale                        │ Exemple          │
+├─────────────────────┼──────────────────────────────────────────┼──────────────────┤
+│ Présent             │ Action actuelle, vérité générale         │ Je mange         │
+│ Imparfait           │ Action passée en cours, description      │ Je mangeais      │
+│ Passé simple        │ Action passée ponctuelle (littéraire)    │ Je mangeai       │
+│ Futur simple        │ Action future                            │ Je mangerai      │
+└─────────────────────┴──────────────────────────────────────────┴──────────────────┘
+
+TEMPS COMPOSÉS (Auxiliaire + Participe passé)
 ┌─────────────────────┬──────────────────┬────────────────────────────────┬──────────────────┐
 │ Temps               │ Auxiliaire       │ Valeur                         │ Exemple          │
 ├─────────────────────┼──────────────────┼────────────────────────────────┼──────────────────┤
