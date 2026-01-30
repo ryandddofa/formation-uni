@@ -4,6 +4,9 @@ import { formationCategories } from '@/data/formationCategories.js'
 import { tempsIndicatifQuestions } from '@/data/formation/temps-indicatif-questions.js'
 import { modesConjugaisonQuestions } from '@/data/formation/modes-conjugaison-questions.js'
 import { attributsQuestions } from '@/data/formation/attributs-questions.js'
+import { classesMotsQuestions } from '@/data/formation/classes-mots-questions.js'
+import { complementDirectQuestions } from '@/data/formation/complement-direct-questions.js'
+
 
 const emit = defineEmits(['start-session'])
 
@@ -53,10 +56,18 @@ function startSession() {
 
     if (categoryId === 'modes-conjugaison') {
       allQuestions = allQuestions.concat(modesConjugaisonQuestions)
-    }
+    } 
 
     if (categoryId === 'attributs') {
   allQuestions = allQuestions.concat(attributsQuestions)
+}
+
+if (categoryId === 'classes-mots') {
+  allQuestions = allQuestions.concat(classesMotsQuestions)
+} 
+
+if (categoryId === 'complement-direct') {
+  allQuestions = allQuestions.concat(complementDirectQuestions)
 }
     // On ajoutera les autres catégories ici plus tard
     // if (categoryId === 'modes-conjugaison') {

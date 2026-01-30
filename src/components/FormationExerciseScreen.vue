@@ -9,6 +9,10 @@ import { recapitulatifTempsComposes } from '@/data/formation/recapitulatif-temps
 import { recapitulatifModes } from '@/data/formation/recapitulatif-modes.js'
 import FormationExerciseCardAttributs from './FormationExerciseCardAttributs.vue'
 import { recapitulatifAttributs } from '@/data/formation/recapitulatif-attributs.js'
+import FormationExerciseCardClassesMots from './FormationExerciseCardClassesMots.vue'
+import { recapitulatifClassesMots } from '@/data/formation/recapitulatif-classes-mots.js'
+import FormationExerciseCardCOD from './FormationExerciseCardCOD.vue'
+import { recapitulatifCOD } from '@/data/formation/recapitulatif-cod.js'
 
 const emit = defineEmits(['session-complete', 'quit-session'])
 
@@ -37,7 +41,11 @@ const currentCardComponent = computed(() => {
     return FormationExerciseCardModes
   } else if (question.categoryId === 'attributs') {
   return FormationExerciseCardAttributs
-  }
+  } else if (question.categoryId === 'classes-mots') {
+  return FormationExerciseCardClassesMots
+  } else if (question.categoryId === 'complement-direct') {
+  return FormationExerciseCardCOD
+}
   
   return FormationExerciseCard
 })
@@ -78,7 +86,11 @@ function getRecapitulatif() {
     return recapitulatifModes
   } else if (question.categoryId === 'attributs') {
   return recapitulatifAttributs
-  }
+  } else if (question.categoryId === 'classes-mots') {
+  return recapitulatifClassesMots
+  } else if (question.categoryId === 'complement-direct') {
+  return recapitulatifCOD
+}
   
   return recapitulatifTempsComposes
 }
